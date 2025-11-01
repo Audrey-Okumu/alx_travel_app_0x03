@@ -1,27 +1,29 @@
-# ALX Travel App 0x01
+ Background Jobs for Email Notifications
 
-## Overview
-This project provides REST API endpoints for managing travel listings and bookings using Django REST Framework. All endpoints support CRUD operations and are documented with Swagger.
+## 📘 Overview
+This milestone enhances the **`alx_travel_app`** project by introducing **asynchronous background processing** using **Celery** with **RabbitMQ** as the message broker.  
+The goal is to offload time-consuming email sending tasks from the main request–response cycle, improving **performance**, **scalability**, and **user experience**.
 
-## Endpoints
-Base URL: `/api/`
+---
 
-### Listings
-- `GET /api/listings/` — List all listings
-- `POST /api/listings/` — Create new listing
-- `GET /api/listings/<id>/` — Retrieve a listing
-- `PUT /api/listings/<id>/` — Update a listing
-- `DELETE /api/listings/<id>/` — Delete a listing
+## 🚀 Objectives
+- Integrate **Celery** into the Django project.
+- Configure **RabbitMQ** as the Celery message broker.
+- Set up a **worker process** to handle background tasks.
+- Implement **email notification** jobs.
+- Ensure that email sending happens **asynchronously** and does **not block** user actions.
+- Use **Docker Compose** for environment setup.
 
-### Bookings
-- `GET /api/bookings/`
-- `POST /api/bookings/`
-- `GET /api/bookings/<id>/`
-- `PUT /api/bookings/<id>/`
-- `DELETE /api/bookings/<id>/`
+---
 
-### Swagger Documentation
-Visit: `/swagger/`
+## 🧩 Tech Stack
+| Component | Description |
+|------------|-------------|
+| **Django** | Web framework |
+| **Celery** | Task queue for asynchronous jobs |
+| **RabbitMQ** | Message broker |
+| **Redis** | Result backend (optional but recommended) |
+| **Docker** | Containerization |
+| **Python 3.x** | Language |
+| **SMTP** | Email sending (e.g., Gmail, Mailtrap, etc.) |
 
-## Testing
-Used Postman  to test API endpoints.
